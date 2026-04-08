@@ -6,3 +6,46 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import warnings
 warnings.filterwarnings('ignore')
+
+
+# ==================== 2. DATA PREPROCESSING ====================
+print("\n" + "="*50)
+print("DATA PREPROCESSING")
+print("="*50)
+
+# Create a copy for preprocessing
+df_processed = df.copy()
+
+# Encode categorical variables
+print("\n[Step 1] Encoding categorical variables...")
+categorical_cols = ['sex', 'smoker', 'region']
+label_encoders = {}
+
+for col in categorical_cols:
+    le = LabelEncoder()
+    df_processed[col] = le.fit_transform(df_processed[col])
+    label_encoders[col] = le
+    print(f"  {col} encoded")
+
+# Separate features and target
+print("\n[Step 2] Separating features and target...")
+X = df_processed.drop('charges', axis=1)
+y = df_processed['charges']
+
+print(f"  Features shape: {X.shape}")
+print(f"  Target shape: {y.shape}")
+
+# Split data into training and testing sets
+print("\n[Step 3] Splitting data (70/30)...")
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
+print(f"  Training samples: {X_train.shape[0]}")
+print(f"  Testing samples: {X_test.shape[0]}")
+
+# Scale features
+print("\n[Step 4] Scaling features...")
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+print("  Features scaled!")
