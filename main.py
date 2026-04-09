@@ -1,8 +1,24 @@
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-import warnings
-warnings.filterwarnings('ignore')
+# ==================== 4. MODEL EVALUATION ====================
+print("\n" + "="*50)
+print("MODEL EVALUATION")
+print("="*50)
+
+# Training metrics
+train_mae = mean_absolute_error(y_train, y_train_pred)
+train_rmse = np.sqrt(mean_squared_error(y_train, y_train_pred))
+train_r2 = r2_score(y_train, y_train_pred)
+
+print("\nTraining Metrics:")
+print(f"  MAE: ${train_mae:.2f}")
+print(f"  RMSE: ${train_rmse:.2f}")
+print(f"  R² Score: {train_r2:.4f}")
+
+# Testing metrics
+test_mae = mean_absolute_error(y_test, y_test_pred)
+test_rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
+test_r2 = r2_score(y_test, y_test_pred)
+
+print("\nTesting Metrics:")
+print(f"  MAE: ${test_mae:.2f}")
+print(f"  RMSE: ${test_rmse:.2f}")
+print(f"  R² Score: {test_r2:.4f}")
