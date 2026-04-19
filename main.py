@@ -7,6 +7,14 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import warnings
 warnings.filterwarnings('ignore')
 
+# ==================== 1. LOAD DATA ====================
+print("Loading data...")
+df = pd.read_csv('insurance_data_linear.csv')
+
+print(f"Dataset shape: {df.shape}")
+print(f"\nFirst few rows:\n{df.head()}")
+print(f"\nData types:\n{df.dtypes}")
+print(f"\nMissing values:\n{df.isnull().sum()}")
 
 # ==================== 2. DATA PREPROCESSING ====================
 print("\n" + "="*50)
