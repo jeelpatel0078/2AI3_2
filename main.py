@@ -101,4 +101,5 @@ test_r2 = r2_score(y_test, y_test_pred)
 print("\nTesting Metrics:")
 print(f"  MAE: ${test_mae:.2f}")
 print(f"  RMSE: ${test_rmse:.2f}")
-print(f"  R² Score: {test_r2:.4f}")    
+print(f"  R² Score: {test_r2:.4f}")
+
