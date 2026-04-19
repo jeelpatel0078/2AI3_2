@@ -91,7 +91,7 @@ Predicted insurance charges: **$4,529.80**
 
 ## GitHub Collaboration Summary
 
-- This repository contains the project script `insurance_ml_model.py` and the dataset file `insurance_data_linear.csv`.
+- This repository contains the project script `main.py` and the dataset file `insurance_data_linear.csv`.
 - Collaborators can contribute by updating the README, improving preprocessing, testing alternative models, and adding data visualization.
 - Use GitHub branches and pull requests to manage feature work.
 - Include clear commit messages and code comments for reproducibility.
