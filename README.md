@@ -14,8 +14,6 @@ Insurance Charges Prediction using Linear Regression
 - Team Member 6: [Kavya Sankhala] - [Data Splitting]
 - Team Member 7: [Khandivar Jeel] - [Prediction making]
 
-> Replace the placeholders above with the actual project team members.
-
 ## Problem Statement
 
 This project predicts individual health insurance charges using demographic and lifestyle data. The goal is to estimate the insurance cost for a person based on age, sex, BMI, number of children, smoking status, and residential region.
